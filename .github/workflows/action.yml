@@ -1,11 +1,13 @@
 name: "action.yml"
-on: push 
+on: push
 
 jobs:
   docker-job:
-    name: Docker job 
+    name: Docker job
     runs-on: ubuntu-latest
     container:
       image: rocker/r-ver:4.2.1
+      volumes:
+        - "${{ env.GITHUB_WORKSPACE }}:/home/r-ver"
     steps:
-      - run: echo "Hello World"
+      - run: R --version
