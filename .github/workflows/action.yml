@@ -9,3 +9,4 @@ jobs:
       image: rocker/r-ver:4.2.1
     steps:
       - run: R --version
+      - run: ls -alpF
