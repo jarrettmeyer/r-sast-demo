@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: rocker/r-ver:4.2.1
+    volumes:
+      - ${GITHUB_WORKSPACE}
     steps:
+      - uses: actions/checkout@v3
       - run: R --version
-      - run: pwd
       - run: ls -alpF
