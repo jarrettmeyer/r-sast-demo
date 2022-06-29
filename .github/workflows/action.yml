@@ -6,8 +6,12 @@ jobs:
     name: Docker job
     runs-on: ubuntu-latest
     container:
-      image: rocker/r-ver:4.2.1
+      image: rocker/tidyverse:4.2.1
     steps:
+      - run: apt-get install -y libxml2
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - run: R --version
       - run: ls -alpF
+      - run: Rscript build/ci.R
