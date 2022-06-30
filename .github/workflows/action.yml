@@ -13,5 +13,4 @@ jobs:
         with:
           fetch-depth: 0
       - run: R --version
-      - run: ls -alpF
       - run: Rscript build/ci.R
